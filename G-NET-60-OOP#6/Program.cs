@@ -47,7 +47,7 @@
              * When would you choose one over the other?
              */
 
-        
+
 
             // 1. Abstract Class:
             // Can contain both abstract methods and implemented methods.
@@ -75,6 +75,49 @@
             // When to use an Interface:
             // Use it when different, unrelated classes need to provide the same functionality
             // without sharing implementation.
+
+            #endregion
+
+            #region Question03
+            //a) Can you write: Appliance a = new Appliance("LG"); ? Why or why not?
+            //b) What is the difference between the three methods: PowerConsumption(), Status(), and Label()? Why did the designer make each one abstract, virtual, or concrete?
+            //c) If you call Status() on a Toaster object, what will it return? Why?
+
+
+            // Reason:
+            // Appliance is an abstract class.
+            // Abstract classes cannot be instantiated directly.
+            // They are only used as a base class for derived classes.
+
+            // b)
+
+            // PowerConsumption()
+            // - Abstract method.
+            // - It has no implementation in the base class.
+            // - Every derived class MUST override it because each appliance
+            //   has a different power consumption.
+
+            // Status()
+            // - Virtual method.
+            // - It has a default implementation: "Standby".
+            // - Derived classes can override it if they need different behavior.
+            // - WashingMachine overrides it, but Toaster does not.
+
+            // Label()
+            // - Concrete (normal) method.
+            // - It already has a complete implementation.
+            // - All appliances use the same logic to create the label,
+            //   so there is no need to override it.
+
+            // c)
+            // Calling Status() on a Toaster object will return:
+            //
+            // "Standby"
+            //
+            // Reason:
+            // Toaster does not override the virtual Status() method,
+            // so it uses the default implementation from the Appliance class.
+
 
             #endregion
             #endregion
