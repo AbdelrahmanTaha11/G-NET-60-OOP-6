@@ -120,6 +120,66 @@
 
 
             #endregion
+
+            #region Question04
+            /*a) What is a partial class? Why would a developer split Calculator into two files?
+                b) What is a partial method? What happens if the OnCalculated() implementation in Calculator.Logging.cs is deleted — will the code still compile? Why?
+                c) What is an extension method? What are the three rules for writing one?
+                d) What will the following code print?
+                Calculator calc = new Calculator();
+                double result = calc.Add(19.5, 0.5);
+                Console.WriteLine(result.ToCurrency());
+                */
+
+
+            // a)
+            // Partial Class:
+            // A partial class allows one class to be split across multiple files.
+            // The compiler combines all parts into a single class.
+            //
+            // Why split Calculator into two files?
+            // - Makes large classes easier to organize.
+            // - Allows multiple developers to work on the same class.
+            // - Separates the main logic from extra features such as logging.
+
+            // b)
+            // Partial Method:
+            // A partial method is declared in one part of a partial class
+            // and can be implemented in another part.
+            //
+            // If the OnCalculated() implementation is deleted,
+            // the code will still compile.
+            //
+            // Why?
+            // Because partial methods are optional.
+            // If no implementation exists, the compiler removes both
+            // the method declaration and its calls.
+
+            // c)
+            // Extension Method:
+            // An extension method allows you to add new methods to an existing type
+            // without modifying its source code or creating a derived class.
+            //
+            // Three rules:
+            // 1. It must be inside a static class.
+            // 2. The method itself must be static.
+            // 3. The first parameter must use the 'this' keyword
+            //    to specify the type being extended.
+
+            // d)
+            // Output:
+            //
+            // Log: result = 20
+            // $20.00
+            //
+            // Explanation:
+            // Add(19.5, 0.5) returns 20.
+            // OnCalculated() prints the log message.
+            // ToCurrency() formats the result as "$20.00".
+
+
+            #endregion
+
             #endregion
 
         }
